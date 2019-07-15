@@ -38,5 +38,30 @@ describe('if there are no words guessed',()=>{
 })
 
 describe('if there are words guessed', ()=>{
+    const guessedWords = [
+        {guessedWord: 'train', letterMatchCount: 3},
+        {guessedWord: 'agile', letterMatchCount: 1},
+        {guessedWord: 'party', letterMatchCount: 5}
+    ]
 
+    let wrapper
+
+    beforeEach(()=>{
+        wrapper = setup({guessedWords})
+    })
+
+    test('renders without errors', () => {
+        const component = findByTestAttr(wrapper, 'guessed-words-component')
+        expect(component.length).toBe(1)
+    });
+
+    test('renders guessed words section',() => {
+        const component = findByTestAttr(wrapper, 'guessed-words')
+        expect(component.length).toBe(1)
+    });
+
+    test('renders correct number of guessed words', () => {
+        const components = findByTestAttr(wrapper, 'guessed-word')
+        expect(components.length).toBe(guessedWords.length)
+    });
 })
