@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 import GuessedWords from './components/congrats/GuessedWords'
 import Congrats from './components/congrats/congrats'
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <h1>Jotto</h1>
       <Congrats success={true}/>
       <GuessedWords
