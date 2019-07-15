@@ -4,7 +4,7 @@ import {findByTestAttr, checkProps} from './../../test.utils'
 import GuessedWords from './GuessedWords'
 
 const defaultProps = {success: false, 
-    guessedWords:[{guessedWords: 'train',letterMatchCount: 3}]
+    guessedWords:[{guessedWord: 'train',letterMatchCount: 3}]
 }
 /**
  * 
