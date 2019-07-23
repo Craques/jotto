@@ -1,4 +1,7 @@
 import checkPropTypes from 'check-prop-types'
+import {createStore} from 'redux'
+import rootReducer from './reducers'
+
 /**
  * Function to find component by test attribute value
  * @param {ShallowWrapper} wrapper - Enzyme shallow wrapper
@@ -18,4 +21,8 @@ export const checkProps = (component, props)=>{
     )
 
     expect(propError).toBeUndefined()
+}
+
+export const storeFactory = (initialState)=>{
+    return createStore(rootReducer, initialState)
 }
