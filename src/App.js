@@ -2,6 +2,7 @@ import React from 'react';
 //import './App.css';
 import GuessedWords from './components/congrats/GuessedWords'
 import Congrats from './components/congrats/congrats'
+import Input from './components/input/input'
 
 function App() {
   return (
