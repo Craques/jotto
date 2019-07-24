@@ -1,6 +1,7 @@
 import checkPropTypes from 'check-prop-types'
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 import rootReducer from './reducers'
+import {middleWare} from './store.config' 
 
 /**
  * Function to find component by test attribute value
@@ -24,5 +25,5 @@ export const checkProps = (component, props)=>{
 }
 
 export const storeFactory = (initialState)=>{
-    return createStore(rootReducer, initialState)
+    return createStore(rootReducer, initialState, applyMiddleware(...middleWare))
 }
